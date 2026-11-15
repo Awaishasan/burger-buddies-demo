@@ -1,0 +1,345 @@
+/* Burger Buddies — menu data (single source of truth is data/menu.json).
+   Prices are SAMPLES for the demo concept. Replace with the real menu. */
+const BB_BRAND = {
+  "instagram": "https://www.instagram.com/burgerbuddies.official",
+  "maps": "https://maps.app.goo.gl/inqkP5uR1HHMwNAV7",
+  "name": "Burger Buddies",
+  "phone": "+923276589441",
+  "phoneDisplay": "+92 327 6589441",
+  "slogan": "Big flavor. Bold taste.",
+  "tagline": "The Best in Town",
+  "websiteLinks": "https://burgerbuddiesofficial.com/",
+  "websiteOld": "https://www.burgerbuddies.online/",
+  "whatsapp": "https://wa.me/923276589441"
+};
+
+const BB_CATEGORIES = [
+  {
+    "icon": "\ud83c\udf54",
+    "id": "beef",
+    "label": "Beef Burgers"
+  },
+  {
+    "icon": "\ud83c\udf57",
+    "id": "fried",
+    "label": "Fried Burgers"
+  },
+  {
+    "icon": "\ud83d\udd25",
+    "id": "grilled",
+    "label": "Grilled Chicken"
+  },
+  {
+    "icon": "\u2728",
+    "id": "bites",
+    "label": "First Crush Bites"
+  },
+  {
+    "icon": "\ud83c\udf2f",
+    "id": "wraps",
+    "label": "Shawarma & Wraps"
+  },
+  {
+    "icon": "\ud83c\udf5f",
+    "id": "fries",
+    "label": "Fries & Sides"
+  },
+  {
+    "icon": "\ud83e\udd6a",
+    "id": "sandwiches",
+    "label": "Sandwiches"
+  },
+  {
+    "icon": "\ud83e\udd64",
+    "id": "drinks",
+    "label": "Drinks"
+  }
+];
+
+const BB_MENU = [
+  {
+    "badge": "Classic",
+    "category": "beef",
+    "desc": "Flame-grilled beef patty, cheddar, Buddy mayo, lettuce, tomato, onion & pickles on a toasted sesame bun.",
+    "id": "bb-classic",
+    "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=800&auto=format&fit=crop",
+    "name": "BB Classic Beef",
+    "price": 550
+  },
+  {
+    "badge": "",
+    "category": "beef",
+    "desc": "Smoky BBQ sauce, melted cheddar, crispy onion rings and a juicy beef patty. The house favourite.",
+    "id": "smoky-house",
+    "img": "https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=800&auto=format&fit=crop",
+    "name": "Smoky House",
+    "price": 650
+  },
+  {
+    "badge": "Spicy \ud83c\udf36\ufe0f",
+    "category": "beef",
+    "desc": "Fresh salsa, fiery jalape\u00f1os and spicy mayo over a beef patty. Hot, fresh and crunchy.",
+    "id": "salsa-jalapeno",
+    "img": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=800&auto=format&fit=crop",
+    "name": "Salsa Jalape\u00f1o",
+    "price": 620
+  },
+  {
+    "badge": "Bestseller",
+    "category": "beef",
+    "desc": "Double cheese, molten cheese lava pouring over a beef patty. Messy in the best way.",
+    "id": "molten-lava",
+    "img": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?q=80&w=800&auto=format&fit=crop",
+    "name": "Molten Lava",
+    "price": 750
+  },
+  {
+    "badge": "",
+    "category": "beef",
+    "desc": "Hunter sauce, saut\u00e9ed mushrooms, cheese and a thick beef patty. Rich and savoury.",
+    "id": "hunter-beef",
+    "img": "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=800&auto=format&fit=crop",
+    "name": "Hunter Beef",
+    "price": 700
+  },
+  {
+    "badge": "",
+    "category": "fried",
+    "desc": "Golden crispy fried chicken fillet, mayo, lettuce and pickles in a soft toasted bun.",
+    "id": "crispy-fried",
+    "img": "https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=800&auto=format&fit=crop",
+    "name": "Crispy Fried Burger",
+    "price": 480
+  },
+  {
+    "badge": "Spicy \ud83c\udf36\ufe0f",
+    "category": "fried",
+    "desc": "Spicy zinger fillet, cheese, jalape\u00f1o mayo and crunchy lettuce. Our crunchiest burger.",
+    "id": "zinger-buddy",
+    "img": "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop",
+    "name": "Zinger Buddy",
+    "price": 520
+  },
+  {
+    "badge": "",
+    "category": "grilled",
+    "desc": "Char-grilled chicken breast, garlic mayo, lettuce and tomato. Lighter, still big on flavour.",
+    "id": "grilled-chicken",
+    "img": "https://images.unsplash.com/photo-1561758033-d89a9ad46330?q=80&w=800&auto=format&fit=crop",
+    "name": "Grilled Chicken Burger",
+    "price": 550
+  },
+  {
+    "badge": "",
+    "category": "grilled",
+    "desc": "BBQ-glazed grilled chicken, smoky sauce, onion and cheese. Straight off the grill.",
+    "id": "bbq-grilled",
+    "img": "https://images.unsplash.com/photo-1550317138-10000687a72b?q=80&w=800&auto=format&fit=crop",
+    "name": "BBQ Grilled Chicken",
+    "price": 600
+  },
+  {
+    "badge": "",
+    "category": "bites",
+    "desc": "Golden chicken tender strips with your choice of signature sauce for dipping.",
+    "id": "tender-strips",
+    "img": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=800&auto=format&fit=crop",
+    "name": "Tender Strips (4 pc)",
+    "price": 350
+  },
+  {
+    "badge": "",
+    "category": "bites",
+    "desc": "Crispy chicken nuggets, golden outside, juicy inside. Made for sharing \u2014 sort of.",
+    "id": "nuggets",
+    "img": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?q=80&w=800&auto=format&fit=crop",
+    "name": "Nuggets (6 pc)",
+    "price": 300
+  },
+  {
+    "badge": "Spicy \ud83c\udf36\ufe0f",
+    "category": "bites",
+    "desc": "Tossed in hot sauce with a cool dip on the side. Bring a buddy, you'll need the backup.",
+    "id": "hot-wings",
+    "img": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?q=80&w=800&auto=format&fit=crop",
+    "name": "Hot Wings (6 pc)",
+    "price": 450
+  },
+  {
+    "badge": "",
+    "category": "wraps",
+    "desc": "Juicy shawarma chicken, garlic sauce, pickles and fries rolled in a warm wrap.",
+    "id": "chicken-shawarma",
+    "img": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?q=80&w=800&auto=format&fit=crop",
+    "name": "Chicken Shawarma",
+    "price": 350
+  },
+  {
+    "badge": "",
+    "category": "wraps",
+    "desc": "Crispy zinger strips, cheese, jalape\u00f1o mayo and fries wrapped up tight.",
+    "id": "zinger-wrapster",
+    "img": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?q=80&w=800&auto=format&fit=crop",
+    "name": "Zinger Wrapster",
+    "price": 450
+  },
+  {
+    "badge": "",
+    "category": "wraps",
+    "desc": "Grilled beef strips, Buddy mayo, onion and tomato in a soft toasted wrap.",
+    "id": "beef-wrap",
+    "img": "https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=800&auto=format&fit=crop",
+    "name": "Beef Wrap",
+    "price": 500
+  },
+  {
+    "badge": "",
+    "category": "fries",
+    "desc": "Golden, crispy, salted. The buddy every burger needs.",
+    "id": "plain-fries",
+    "img": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=80&w=800&auto=format&fit=crop",
+    "name": "Plain Fries",
+    "price": 200
+  },
+  {
+    "badge": "",
+    "category": "fries",
+    "desc": "Fries tossed in our signature masala mix with a drizzle of spicy mayo.",
+    "id": "masala-fries",
+    "img": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=800&auto=format&fit=crop",
+    "name": "Masala Fries",
+    "price": 250
+  },
+  {
+    "badge": "Loaded",
+    "category": "fries",
+    "desc": "Fries loaded with molten cheese sauce, jalape\u00f1os and Buddy mayo.",
+    "id": "loaded-fries",
+    "img": "https://images.unsplash.com/photo-1585109649139-366815a0d713?q=80&w=800&auto=format&fit=crop",
+    "name": "Loaded Cheese Fries",
+    "price": 450
+  },
+  {
+    "badge": "",
+    "category": "sandwiches",
+    "desc": "Grilled chicken, egg, mayo and fresh salad in toasted bread.",
+    "id": "chicken-sandwich",
+    "img": "https://images.unsplash.com/photo-1521305916504-4a1121188589?q=80&w=800&auto=format&fit=crop",
+    "name": "Chicken Sandwich",
+    "price": 400
+  },
+  {
+    "badge": "",
+    "category": "sandwiches",
+    "desc": "BBQ chicken, smoky sauce and cheese pressed in toasted bread.",
+    "id": "bbq-sandwich",
+    "img": "https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=800&auto=format&fit=crop",
+    "name": "BBQ Sandwich",
+    "price": 450
+  },
+  {
+    "badge": "",
+    "category": "drinks",
+    "desc": "Chilled soft drink, 345 ml can.",
+    "id": "drink-345",
+    "img": "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?q=80&w=800&auto=format&fit=crop",
+    "name": "Soft Drink (345 ml)",
+    "price": 80
+  },
+  {
+    "badge": "",
+    "category": "drinks",
+    "desc": "Chilled soft drink, 500 ml bottle.",
+    "id": "drink-500",
+    "img": "https://images.unsplash.com/photo-1554866585-cd94860890b7?q=80&w=800&auto=format&fit=crop",
+    "name": "Soft Drink (500 ml)",
+    "price": 120
+  },
+  {
+    "badge": "",
+    "category": "drinks",
+    "desc": "Family-size 1.5 L bottle. For the whole buddy gang.",
+    "id": "drink-15l",
+    "img": "https://images.unsplash.com/photo-1437418747212-8d9709afab22?q=80&w=800&auto=format&fit=crop",
+    "name": "Soft Drink (1.5 L)",
+    "price": 250
+  },
+  {
+    "badge": "",
+    "category": "drinks",
+    "desc": "Chilled mineral water.",
+    "id": "water",
+    "img": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=800&auto=format&fit=crop",
+    "name": "Mineral Water",
+    "price": 50
+  }
+];
+
+const BB_COMBOS = [
+  {
+    "desc": "2 BB Classic Beef + 1 Masala Fries + 2 Drinks (345 ml). Built for two buddies.",
+    "id": "buddy-duo",
+    "img": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=800&auto=format&fit=crop",
+    "name": "Buddy Duo",
+    "price": 1450,
+    "was": 1680
+  },
+  {
+    "desc": "1 Molten Lava + Tender Strips (4 pc) + Plain Fries + Drink (500 ml). The full crush.",
+    "id": "crush-box",
+    "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=800&auto=format&fit=crop",
+    "name": "Crush Box",
+    "price": 1350,
+    "was": 1520
+  },
+  {
+    "desc": "4 burgers of your choice + 2 Loaded Fries + Nuggets (6 pc) + 1.5 L Drink. Feeds the gang.",
+    "id": "family-feast",
+    "img": "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop",
+    "name": "Family Feast",
+    "price": 2999,
+    "was": 3450
+  }
+];
+
+const BB_SAUCES = [
+  "Buddy Mayo",
+  "Smoky BBQ",
+  "Spicy Jalape\u00f1o",
+  "Garlic Sauce",
+  "Hunter Sauce",
+  "Cheese Lava"
+];
+
+const BB_TOPPINGS = [
+  {
+    "id": "extra-cheese",
+    "name": "Extra Cheese",
+    "price": 80
+  },
+  {
+    "id": "extra-patty",
+    "name": "Extra Patty",
+    "price": 200
+  },
+  {
+    "id": "jalapeno",
+    "name": "Jalape\u00f1os",
+    "price": 50
+  },
+  {
+    "id": "mushroom",
+    "name": "Mushrooms",
+    "price": 80
+  },
+  {
+    "id": "fried-egg",
+    "name": "Fried Egg",
+    "price": 60
+  },
+  {
+    "id": "onion-rings",
+    "name": "Onion Rings",
+    "price": 100
+  }
+];
