@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger Buddies — Big Flavor. Bold Taste. | The Best in Town</title>
+  <meta name="description" content="Burger Buddies — Premium burgers, shawarma, wraps, fries and signature sauces. Big flavor. Bold taste. The Best in Town. Order on WhatsApp.">
+  <meta property="og:title" content="Burger Buddies — Big Flavor. Bold Taste.">
+  <meta property="og:description" content="Premium burgers, shawarma, wraps, fries and signature sauces. The Best in Town.">
+  <meta property="og:image" content="assets/images/hero-burger.webp">
+  <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="assets/js/menu-data.js" defer></script>
+  <script src="assets/js/cart.js" defer></script>
+  <script src="assets/js/builder.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader" aria-hidden="true">
+    <div class="pre-logo"><span>B</span><span>U</span><span>R</span><span>G</span><span>E</span><span>R</span>&nbsp;<span>B</span><span>U</span><span>D</span><span>D</span><span>I</span><span>E</span><span>S</span></div>
+    <div class="pre-bar"><i></i></div>
+    <small>Big flavor · Bold taste</small>
+  </div>
+
+  <!-- Nav -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="logo" href="#top" aria-label="Burger Buddies — home">
+        <img class="logo-mark" src="assets/images/logo.svg" alt="Burger Buddies logo">
+        <span class="logo-text">BURGER BUDDIES<small>THE BEST IN TOWN</small></span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#builder">Build Your Buddy</a>
+        <a href="#deals">Deals</a>
+        <a href="#gram">From the Gram</a>
+        <a href="#visit">Visit Us</a>
+      </nav>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <button class="cart-btn" id="cart-open" aria-label="Open your order">🛒 Order <span class="cart-count" id="cart-count">0</span></button>
+        <button class="burger-menu-btn" id="nav-toggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">🍔 Premium Burger · The Best in Town</span>
+        <h1>
+          <span class="line flavor">Big Flavor.</span>
+          <span class="line bold">Bold Taste.</span>
+          <span class="line taste">Buddies.</span>
+        </h1>
+        <p class="lead">Juicy beef burgers, crispy fried chicken, shawarma, wraps and our <b>signature sauces</b> — made fresh, stacked high, and built for sharing with your buddies.</p>
+        <div class="hero-cta">
+          <a class="btn btn-yellow" href="https://wa.me/923276589441?text=Hi%20Burger%20Buddies!%20%F0%9F%8D%94%20I%27d%20like%20to%20order." target="_blank" rel="noopener">📱 Order on WhatsApp</a>
+          <a class="btn btn-ghost" href="#menu">See the Menu ↓</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b><span data-count="24" data-suffix="+">0</span></b><span>items on the menu</span></div>
+          <div class="stat"><b><span data-count="8">0</span></b><span>menu categories</span></div>
+          <div class="stat"><b><span data-count="1100" data-suffix="+">0</span></b><span>Buddies on Instagram</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="spin-badge">★ THE BEST<br>IN TOWN ★</div>
+        <div class="hero-img-frame">
+          <img src="assets/images/hero-burger.webp" alt="Burger Buddies signature burger with melted cheese and golden fries">
+        </div>
+        <div class="float-chip chip-1"><span class="chip-emoji">🌋</span><span>Molten Lava<small>double cheese · Rs 750</small></span></div>
+        <div class="float-chip chip-2"><span class="chip-emoji">⭐</span><span>4.9 / 5<small><b>Buddy approved</b></small></span></div>
+        <span class="floating-ingredient" style="top:38%; left:-14px;">🧀</span>
+        <span class="floating-ingredient" style="bottom:8%; left:12%;">🍟</span>
+        <span class="floating-ingredient" style="top:12%; right:22%;">🌶️</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Big Flavor</span><span class="dot">●</span><span>Bold Taste</span><span class="dot">●</span><span>The Best in Town</span><span class="dot">●</span><span>Beef Burgers</span><span class="dot">●</span><span>Shawarma &amp; Wraps</span><span class="dot">●</span><span>Signature Sauces</span><span class="dot">●</span><span>First Crush Bites</span><span class="dot">●</span>
+    </div>
+  </div>
+
+  <!-- Menu -->
+  <section id="menu">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Our Menu</span>
+        <h2>Pick your <em>buddy</em></h2>
+        <p>From the BB Classic Beef to the Molten Lava — every burger is stacked fresh. Tap a category, add to your order, check out on WhatsApp.</p>
+        <span class="demo-note">Demo concept — menu names are the brand's own; prices shown are samples.</span>
+      </div>
+      <div class="tabs" id="menu-tabs"></div>
+      <div class="menu-grid" id="menu-grid"></div>
+    </div>
+  </section>
+
+  <!-- Builder -->
+  <section class="builder" id="builder">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Build Your Buddy</span>
+        <h2>Your burger, <em>your rules</em></h2>
+        <p>Pick a patty, a cheese, a sauce and your toppings — watch it stack up live, then add it to your order.</p>
+      </div>
+      <div class="builder-grid">
+        <div class="builder-visual reveal-left">
+          <div class="burger-stage" id="burger-stage"></div>
+          <div class="builder-total">
+            <span class="price" id="builder-price">Rs 530 <small>total</small></span>
+            <button class="btn btn-yellow" id="builder-add">Add My Buddy 🍔</button>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="opt-group"><h3>1 · Pick your patty</h3><div class="opt-row" id="opt-patty"></div></div>
+          <div class="opt-group"><h3>2 · Pick your cheese</h3><div class="opt-row" id="opt-cheese"></div></div>
+          <div class="opt-group"><h3>3 · Pick your sauce</h3><div class="opt-row" id="opt-sauce"></div></div>
+          <div class="opt-group"><h3>4 · Add toppings</h3><div class="opt-row" id="opt-toppings"></div></div>
+          <p style="color: rgba(255,246,229,.6); font-size:.88rem;">Signature sauces: Buddy Mayo · Smoky BBQ · Spicy Jalapeño · Garlic Sauce · Hunter Sauce · Cheese Lava.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deals -->
+  <section id="deals">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Buddy Deals</span>
+        <h2>Built for <em>sharing</em></h2>
+        <p>Combos for two, for the crush, and for the whole gang. One tap adds the full deal to your order.</p>
+      </div>
+      <div class="deals-grid" id="deals-grid"></div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section id="why" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Why Buddies?</span>
+        <h2>Not just a burger. <em>A buddy.</em></h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature reveal" style="--d:0s"><div class="icon">🔥</div><h3>Big flavor, every time</h3><p>Stacked high with juicy patties, fresh salad and sauces that actually taste like something.</p></div>
+        <div class="feature reveal" style="--d:.08s"><div class="icon">🧀</div><h3>Signature sauces</h3><p>Buddy Mayo, Smoky BBQ, Cheese Lava and more — the sauces are half the reason to come back.</p></div>
+        <div class="feature reveal" style="--d:.16s"><div class="icon">👯</div><h3>Made for sharing</h3><p>Bites, wings, loaded fries and family deals. Bring a buddy — or don't, and keep it all.</p></div>
+        <div class="feature reveal" style="--d:.24s"><div class="icon">📱</div><h3>Order in one tap</h3><p>Add to your cart and send the order straight to WhatsApp. No app, no account, no waiting around.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- From the Gram -->
+  <section class="gram" id="gram">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">From the Gram</span>
+        <h2>Follow the <em>flavor</em></h2>
+        <p>New drops, behind-the-scenes and the next big thing — first on Instagram @burgerbuddies.official.</p>
+      </div>
+      <div class="gram-grid" id="gram-grid"></div>
+      <div class="hashtags reveal">
+        <span>#BurgerBuddies</span><span>#BigFlavor</span><span>#BoldTaste</span><span>#BurgerTime</span><span>#FoodLovers</span><span>#NewInTown</span>
+      </div>
+      <div style="text-align:center; margin-top:28px;" class="reveal">
+        <a class="btn btn-dark" href="https://www.instagram.com/burgerbuddies.official" target="_blank" rel="noopener">📸 Follow @burgerbuddies.official</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit -->
+  <section id="visit">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Visit &amp; Order</span>
+        <h2>Hungry? <em>Let's fix that.</em></h2>
+        <p>Call for delivery, order on WhatsApp, or find us on the map.</p>
+      </div>
+      <div class="visit-grid">
+        <div class="visit-card reveal" style="--d:0s">
+          <div class="icon">📞</div><h3>Call for Delivery</h3>
+          <p>+92 327 6589441</p>
+          <a class="btn btn-dark" href="tel:+923276589441">Call Now</a>
+        </div>
+        <div class="visit-card reveal" style="--d:.08s">
+          <div class="icon">💬</div><h3>WhatsApp Order</h3>
+          <p>Send your order in one tap — cart checkout does this for you.</p>
+          <a class="btn btn-yellow" href="https://wa.me/923276589441?text=Hi%20Burger%20Buddies!%20%F0%9F%8D%94%20I%27d%20like%20to%20order." target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+        <div class="visit-card reveal" style="--d:.16s">
+          <div class="icon">📍</div><h3>Find Us</h3>
+          <p>See the location on Google Maps.</p>
+          <a class="btn btn-dark" href="https://maps.app.goo.gl/inqkP5uR1HHMwNAV7" target="_blank" rel="noopener">Open in Maps</a>
+        </div>
+        <div class="visit-card reveal" style="--d:.24s">
+          <div class="icon">📸</div><h3>Instagram</h3>
+          <p>@burgerbuddies.official — 1,100+ buddies and growing.</p>
+          <a class="btn btn-dark" href="https://www.instagram.com/burgerbuddies.official" target="_blank" rel="noopener">Follow Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h4>BURGER BUDDIES</h4>
+          <p style="max-width:320px;">Big flavor. Bold taste.<br>The Best in Town. 🍔</p>
+        </div>
+        <div>
+          <h4>EXPLORE</h4>
+          <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#builder">Build Your Buddy</a></li>
+            <li><a href="#deals">Buddy Deals</a></li>
+            <li><a href="#visit">Visit &amp; Order</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>FIND US</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/burgerbuddies.official" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://wa.me/923276589441" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="tel:+923276589441">+92 327 6589441</a></li>
+            <li><a href="https://maps.app.goo.gl/inqkP5uR1HHMwNAV7" target="_blank" rel="noopener">Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Burger Buddies. Big flavor. Bold taste.</span>
+        <span>Demo concept by Dev Technologies — menu items are the brand's own; prices, photos and hours are samples to be replaced with the real ones.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="cart-overlay"></div>
+  <aside class="drawer" id="cart-drawer" aria-label="Your order">
+    <div class="drawer-head">
+      <h3>Your <span>Order</span> 🍔</h3>
+      <button class="close-btn" id="cart-close" aria-label="Close cart">✕</button>
+    </div>
+    <div class="drawer-body" id="cart-items"></div>
+    <div class="drawer-foot" id="cart-foot">
+      <div class="total-row"><span>Total</span><span class="price" id="cart-total">Rs 0</span></div>
+      <small>Pay on delivery / pickup — confirm on WhatsApp.</small>
+      <button class="btn btn-yellow" id="checkout-btn">Order on WhatsApp 💬</button>
+    </div>
+  </aside>
+
+  <div id="toast" role="status"></div>
+
+</body>
+</html>
