@@ -1,0 +1,90 @@
+/* ============================================================
+   Burger Buddies — animations
+   Anime.js drives the hero timeline, burger build, counters and
+   scroll reveals (see assets/js/animations.js). The keyframes
+   below cover the pure-CSS motion: marquee, floating chips,
+   spinning badge, steam and the scroll-reveal base states.
+   ============================================================ */
+
+/* Marquee — the track is duplicated in JS; the animation loops it */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee-scroll 22s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+/* Gentle float for hero chips + ingredients (Anime.js adds the rest) */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.float-chip { animation: float-soft 3.4s ease-in-out infinite; }
+.chip-2 { animation-delay: 0.9s; }
+.floating-ingredient { animation: float-soft 4.2s ease-in-out infinite; }
+
+/* Rotating badge */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-badge { animation: spin-slow 14s linear infinite; }
+
+/* Hero image: slow zoom (Ken Burns) */
+@keyframes ken-burns {
+  from { transform: scale(1); }
+  to { transform: scale(1.07); }
+}
+.hero-img-frame img { animation: ken-burns 9s ease-in-out infinite alternate; }
+
+/* Scroll reveal — base state; .revealed is added by JS */
+.reveal { opacity: 0; transform: translateY(34px); }
+.reveal.revealed { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+.reveal-left { opacity: 0; transform: translateX(-40px); }
+.reveal-left.revealed { opacity: 1; transform: translateX(0); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+.reveal-right { opacity: 0; transform: translateX(40px); }
+.reveal-right.revealed { opacity: 1; transform: translateX(0); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+.reveal-zoom { opacity: 0; transform: scale(0.92); }
+.reveal-zoom.revealed { opacity: 1; transform: scale(1); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* Stagger helpers — JS sets --d per card */
+.reveal.revealed, .reveal-left.revealed, .reveal-right.revealed, .reveal-zoom.revealed { transition-delay: var(--d, 0s); }
+
+/* Burger builder: layers pop in when the burger rebuilds */
+@keyframes layer-pop {
+  from { opacity: 0; transform: translateY(-16px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.burger-layer { animation: layer-pop 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* Cart button bounce when an item lands */
+@keyframes cart-bounce {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.18) rotate(-3deg); }
+  60% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+.cart-btn.bounce { animation: cart-bounce 0.45s ease; }
+
+/* Toast slide is handled in main.css; this adds a tiny wiggle */
+@keyframes toast-wiggle {
+  0%, 100% { transform: translate(-50%, 0); }
+  25% { transform: translate(-50%, -3px); }
+  75% { transform: translate(-50%, 2px); }
+}
+#toast.show { animation: toast-wiggle 0.4s ease 0.1s; }
+
+/* Preloader burger stack */
+@keyframes pre-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+#preloader .pre-logo span { animation: pre-bounce 0.9s ease-in-out infinite; }
+
+/* Reduced motion: respect the user's system setting */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track, .float-chip, .floating-ingredient, .spin-badge,
+  .hero-img-frame img, #preloader .pre-logo span { animation: none !important; }
+  .reveal, .reveal-left, .reveal-right, .reveal-zoom { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
